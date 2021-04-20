@@ -1,6 +1,6 @@
 import MainLayout from '../../components/MainLayout'
-import { useDispatch, useSelector } from 'react-redux';
-import React, {useEffect, useState} from 'react';
+import { useDispatch } from 'react-redux';
+import React, { useState} from 'react';
 import {sendPostRequest} from '../../redux/actions/postAction'
 
 export default function New() {
@@ -14,6 +14,7 @@ export default function New() {
         dispatch(sendPostRequest(postTitle as string, postBody as string));
         setPostTitle('');
         setPostBody('');
+
     };
 
 
@@ -35,13 +36,13 @@ export default function New() {
                 }
                 textarea {
                     width: 500px;
-                    font-size: 20px;
+                    font-size: 15px;
                 }
                 .postTitle{ 
-                    height: 100px;
+                    height: 80px;
                 }
                 .postBody{ 
-                    height: 200px;
+                    height: 150px;
                 }
 
     

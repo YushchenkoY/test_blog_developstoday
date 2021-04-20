@@ -37,10 +37,27 @@ export default function Posts() {
             })}
             </div>
             <style jsx>{`
+                ul{
+                    width: 350px;
+                    border: 1px solid black;
+                    margin: 10px;
+                    padding: 5px;
+
+                }
+                li{
+                    padding: 15px;
+                    list-style: none;
+                }
+                li h3{
+                    padding: 0;
+                    margin: 0;
+
+                }
                 .postWrapper{
-                    display: flex;
-                    flex-direction: column;
+                    display: flex; 
+                    flex-flow: row wraper;
                     justify-content: center;
+                    flex-wrap: wrap;
                 }
                 a {
                     display: flex;

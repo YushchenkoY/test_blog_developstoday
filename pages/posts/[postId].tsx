@@ -37,10 +37,12 @@ export default function Post(props) {
                         <p>{post.body}</p>
                     </div>
                     <div className='commentsWraper'>
-                        <p>Comments:</p>
-                        {post.comments.map(comment => {
-                            return (<div key={comment.id}>{comment.body}</div>)
-                        })}
+                        <p className="com">Comments:</p>
+                        <ul>
+                            {post.comments.map(comment => {
+                                return (<li key={comment.id}>{comment.body}</li>)
+                            })}
+                        </ul>
                     </div>
                     <form>
                         <textarea value={comment} onChange={(e) => setComment(e.target.value)} />
@@ -51,17 +53,33 @@ export default function Post(props) {
 
             
             <style jsx>{`
+            MainLayout{
+                display: flex;
+                flex-direction: column;
+
+            }
+
             .postWrapper{
-                text-align: center;
-                margin: 2rem;
+                margin-bottom: 3rem;
+
             }
             h3{
-                margin: 2rem;
+                margin: 3rem 0 1rem;
             }
             .commentsWraper div{
                 margin: 1rem;
             }
-
+            form {
+                margin: 60px 10%;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+            }
+            textarea {
+                width: 500px;
+                font-size: 20px;
+                height: 100px;
+            }
             `}</style>
         </MainLayout>
     )
