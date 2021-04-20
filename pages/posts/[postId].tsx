@@ -43,7 +43,7 @@ export default function Post(props) {
                         })}
                     </div>
                     <form>
-                        <input type="text" value={comment} onChange={(e) => setComment(e.target.value)} />
+                        <textarea value={comment} onChange={(e) => setComment(e.target.value)} />
                         <button onClick={handleButtonClick}>Send</button>
                     </form>
                 </div>

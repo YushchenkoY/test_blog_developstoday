@@ -21,9 +21,9 @@ export default function New() {
         <MainLayout page={"New post"}>
             <form>
                 <h3> Post`s subject</h3> 
-                <input type="text" value={postTitle} onChange={(e) => setPostTitle(e.target.value)} />
+                <textarea  value={postTitle} onChange={(e) => setPostTitle(e.target.value)} className='postTitle' />
                 <h3> Text </h3>
-                <input type="text" value={postBody} onChange={(e) => setPostBody(e.target.value)} />
+                <textarea  value={postBody} onChange={(e) => setPostBody(e.target.value)} className='postBody' />
                 <button onClick={handleButtonClick}>Send</button>
             </form>
             <style jsx>{`
@@ -32,8 +32,19 @@ export default function New() {
                     display: flex;
                     flex-direction: column;
                     align-items: center;
-
                 }
+                textarea {
+                    width: 500px;
+                    font-size: 20px;
+                }
+                .postTitle{ 
+                    height: 100px;
+                }
+                .postBody{ 
+                    height: 200px;
+                }
+
+    
             `}
             </style>
         </MainLayout>

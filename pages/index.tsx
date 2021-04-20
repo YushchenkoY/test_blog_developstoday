@@ -21,7 +21,6 @@ export default function Home() {
         div p{
           font-size: 20px;
         }
-
       `}
       </style>
     </MainLayout>
