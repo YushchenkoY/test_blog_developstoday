@@ -2,11 +2,15 @@ import MainLayout from '../../components/MainLayout'
 import { useDispatch } from 'react-redux';
 import React, { useState} from 'react';
 import {sendPostRequest} from '../../redux/actions/postAction'
+import Router , {useRouter}  from 'next/router';
+import { ROUTES } from '../../constants/routes';
+
 
 export default function New() {
     const dispatch = useDispatch();
     const [postTitle, setPostTitle] = useState('');
     const [postBody, setPostBody] = useState('');
+    const router = useRouter()
     
     const handleButtonClick = (e) => {
         e.preventDefault();
@@ -14,7 +18,7 @@ export default function New() {
         dispatch(sendPostRequest(postTitle as string, postBody as string));
         setPostTitle('');
         setPostBody('');
-
+        router.push(ROUTES.posts)
     };
 
 
